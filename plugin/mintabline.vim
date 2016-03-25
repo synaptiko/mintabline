@@ -23,14 +23,21 @@ function! mintabline#tabline()
 		" Set tab state
 		let s .= '%' . tab . 'T'
 		let s .= (tab == tabpagenr() ? '%#TabLineSel#' : '%#TabLine#')
+
 		" Set tab label
-		let s .= ' ' . (empty(bufname) ? '∅ ' : substitute(fnamemodify(bufname, ':~:.'), '\v\w\zs.{-}\ze(\\|/)', '', 'g'))
-		" Set modified flag or number
-		let s .= (bufmodif ? '*' : s:toSuperscript(tab)) . ' '
+		let s .= ' '
+		if (match(bufname, '^term://.*:fzf ')) == 0
+			let s .= 'Fuzzy search'
+		else
+			" Empty or collapsed name
+			let s .= (empty(bufname) ? '∅ ' : substitute(fnamemodify(bufname, ':~:.'), '\v\w\zs.{-}\ze(\\|/)', '', 'g'))
+			" Set modified flag or number
+			let s .= (bufmodif ? '*' : s:toSuperscript(tab))
+		endif
 	endfor
 
 	" Finalize tabline
-	let s .= '%#TabLineFill#'
+	let s .= ' %#TabLineFill#'
 
 	return s
 endfunction
