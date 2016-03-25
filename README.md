@@ -1,24 +1,20 @@
-# tabline
+# mintabline
 
-Forked from [tabline.vim](https://github.com/mkitt/tabline.vim),
-inspired by [vim-ctrlspace](https://github.com/szw/vim-ctrlspace)
+Forked from [tabline.vim](https://github.com/kh3phr3n/tabline).
 
-![tabs](http://static.tuxico.com/tabline/preview.png)
+![mintabline](/../screenshots/preview.png?raw=true)
 
 ## Features
 
-* Tab number
-* Splits (`²³⁴⁵⁶⁷⁸⁹`, `⁺`)
-* Filename (basename only)
-* Modified flag (unicode: `●`)
+* Tab number: `¹²³⁴⁵⁶⁷⁸⁹⁺` (you can use the number for `Ngt` movement)
+* Filename: path shortened as in default tabline
+* Modified flag instead of tab number: `*`
+* New buffers are simply named as `∅` symbol (instead of ugly `[No name]`)
 
 ## Installation
 
-To install this plugin, manually copy plugin/tabline.vim to:
+To install this plugin, manually copy plugin/mintabline.vim to:
 
-    ~/.vim/plugin/tabline.vim
+    ~/.vim/plugin/mintabline.vim
 
-or instead, consider using a Vim plugin manager such as
-[Vundle](https://github.com/gmarik/Vundle.vim) or
-[Pathogen](https://github.com/tpope/vim-pathogen).
-
+or instead, consider using a Vim plugin manager such as [vim-plug](https://github.com/junegunn/vim-plug).
