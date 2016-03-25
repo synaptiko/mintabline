@@ -13,8 +13,6 @@ Forked from [tabline.vim](https://github.com/kh3phr3n/tabline).
 
 ## Installation
 
-To install this plugin, manually copy plugin/mintabline.vim to:
+To install this plugin, consider using [vim-plug](https://github.com/junegunn/vim-plug):
 
-    ~/.vim/plugin/mintabline.vim
-
-or instead, consider using a Vim plugin manager such as [vim-plug](https://github.com/junegunn/vim-plug).
+    Plug 'synaptiko/mintabline'
