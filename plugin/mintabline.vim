@@ -37,7 +37,7 @@ function! mintabline#tabline()
 	endfor
 
 	" Finalize tabline
-	let s .= ' %#TabLineFill#'
+	let s .= '%#TabLineFill#'
 
 	return s
 endfunction
