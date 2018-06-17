@@ -26,13 +26,17 @@ function! mintabline#tabline()
 
 		" Set tab label
 		let s .= ' '
-		if (match(bufname, '^term://.*:fzf ')) == 0
-			let s .= 'Fuzzy search'
+		if bufname =~ 'term://.*#FZF$'
+			let s .= 'FZF '
 		else
 			" Empty or collapsed name
 			let s .= (empty(bufname) ? '∅ ' : substitute(fnamemodify(bufname, ':~:.'), '\v\w\zs.{-}\ze(\\|/)', '', 'g'))
-			" Set modified flag or number
-			let s .= (bufmodif ? '*' : s:toSuperscript(tab))
+			" Add modified flag or number
+			if bufmodif != 0
+				let s .= '* '
+			else
+				let s .= s:toSuperscript(tab) . ' '
+			endif
 		endif
 	endfor
 
